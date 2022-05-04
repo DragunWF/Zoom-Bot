@@ -6,8 +6,10 @@ from .utils import Utils
 
 class DatabaseTool:
     def __init__(self):
-        root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        dirname = Utils.get_dirname()
+        root = os.path.abspath(os.path.join(os.path.dirname(dirname), ".."))
         self.__path = f"{root}\\sql\\db.sqlite3"
+
         self.__meeting_names = []
         self.__fill_meeting_names()
 
@@ -47,3 +49,17 @@ class DatabaseTool:
             db.execute("INSERT INTO times_program_opened (date_opened, hour_opened) " +
                        f'VALUES ("{date}", "{hour}")')
             db.commit()
+
+    def display_stats(self):
+        meeting_joins, program_opened = None, None
+        with sqlite3.connect(self.__path) as db:
+            data = db.execute("SELECT * FROM software_stats").fetchall()
+            meeting_joins, program_opened = data[0][1], data[0][0]
+
+        times_string = Utils.detect_plural("time", program_opened)
+        if meeting_joins:
+            meeting_string = f"{meeting_joins} {Utils.detect_plural('meeting', meeting_joins)}"
+        else:
+            meeting_string = "no meetings yet"
+        Utils.colored_print(f"You have opened this automation bot {program_opened} {times_string} " +
+                            f"and have used this bot to join {meeting_string}!", color="cyan")

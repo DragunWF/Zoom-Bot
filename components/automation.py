@@ -18,6 +18,7 @@ class AutomationExecutor:
         self.__iterations = 0
         self.__db_tool = database_tool
 
+        self.__db_tool.display_stats()
         self.__check_for_name_duplicates()
 
     def __check_for_name_duplicates(self):
