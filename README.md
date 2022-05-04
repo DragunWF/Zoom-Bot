@@ -30,13 +30,13 @@ of that script.
     "meetings": [
       {
         "name": "Mathematics",
-        "link": "https://zoom.us/j/8308570007?pwd=<link>",
+        "link": "https://zoom.us/j/<meeting_code>",
         "days": ["monday", "wednesday"],
         "hour": { "start": "12:00", "end": "12:40" }
       },
       {
         "name": "Media Information and Literacy",
-        "link": "https://zoom.us/j/8308570007?pwd=<link>",
+        "link": "https://zoom.us/j/<meeting_code>",
         "days": ["tuesday", "thursday"],
         "hour": { "start": "13:55", "end": "14:35" }
       }
