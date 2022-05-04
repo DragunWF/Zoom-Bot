@@ -1,5 +1,9 @@
 # AutoJoinZoom
 
+![GitHub top language](https://img.shields.io/github/languages/top/DragunWF/AutoJoinZoom)
+![Lines of code](https://img.shields.io/tokei/lines/github/DragunWF/AutoJoinZoom)
+![GitHub repo size](https://img.shields.io/github/repo-size/DragunWF/AutoJoinZoom)
+
 ## Description
 
 Hello! I created this mainly to automatically join my own zoom classes. The code is mainly
