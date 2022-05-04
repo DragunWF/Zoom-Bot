@@ -1,6 +1,7 @@
 [
   {
     "chrome_profile": "",
+    "is_exe": false,
     "meetings": [
       {
         "name": "name",
