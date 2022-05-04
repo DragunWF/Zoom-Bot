@@ -1,5 +1,8 @@
 import os
 import pyttsx3
+import json
+import sys
+from pathlib import Path
 from datetime import datetime
 from colored import fg
 
@@ -25,12 +28,17 @@ class Utils:
         Utils.colored_print(text, color)
 
     @staticmethod
+    def get_dirname() -> str:
+        is_exe = json.loads(Path("config/settings.json").read_text())[0]["is_exe"]
+        return sys.executable if is_exe else __file__
+
+    @staticmethod
     def get_path() -> str:
-        root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        dirname = Utils.get_dirname()
+        root = os.path.abspath(os.path.join(os.path.dirname(dirname), ".."))
         while "\\" in root:
             root = root.replace("\\", "/")
         root = "".join([i if i != ":" else f"{i}/" for i in root])
-
         return f"{root[0].upper()}{root[1:]}"
 
     @staticmethod
@@ -47,7 +55,11 @@ class Utils:
     @staticmethod
     def get_date_string() -> str:
         return str(datetime.now()).split(" ")
-    
+
     @staticmethod
     def hour_to_int(hour: str) -> int:
         return int("".join(hour.split(":")))
+
+    @staticmethod
+    def detect_plural(word, times):
+        return f"{word}s" if times > 1 else word
