@@ -59,7 +59,3 @@ class Utils:
     @staticmethod
     def hour_to_int(hour: str) -> int:
         return int("".join(hour.split(":")))
-
-    @staticmethod
-    def detect_plural(word, times):
-        return f"{word}s" if times > 1 else word
