@@ -16,21 +16,23 @@ of that script.
   the `"meetings"` property array, you have to set your zoom meetings there with its details such
   as the `"days"` of when the day of the week it occurs and `"hour"` of the hour it starts.
 - You can ignore the `"chrome_profile"` property for now. I'm still planning a feature that uses it.
+- The `"is_exe"` just asks if you're going to run the bot from an `.exe` file or from the source code.
 
 ```json
 [
   {
     "chrome_profile": "",
+    "is_exe": false,
     "meetings": [
       {
-        "name": "name",
-        "link": "",
+        "name": "Mathematics",
+        "link": "https://zoom.us/j/8308570007?pwd=<link>",
         "days": ["monday", "wednesday"],
         "hour": { "start": "12:00", "end": "12:40" }
       },
       {
-        "name": "name",
-        "link": "",
+        "name": "Media Information and Literacy",
+        "link": "https://zoom.us/j/8308570007?pwd=<link>",
         "days": ["tuesday", "thursday"],
         "hour": { "start": "13:55", "end": "14:35" }
       }
