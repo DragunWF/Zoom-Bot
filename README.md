@@ -1,4 +1,4 @@
-# AutoJoinZoom
+# Zoom-Bot
 
 ![GitHub top language](https://img.shields.io/github/languages/top/DragunWF/AutoJoinZoom)
 ![Lines of code](https://img.shields.io/tokei/lines/github/DragunWF/AutoJoinZoom)
