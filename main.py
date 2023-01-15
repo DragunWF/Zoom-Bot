@@ -1,8 +1,8 @@
 from time import sleep
-from components.automation import AutomationExecutor
-from components.time_getter import TimeGetter
-from components.db_tool import DatabaseTool
-from components.utils import Utils
+from scripts.automation import AutomationExecutor
+from scripts.time_getter import TimeGetter
+from scripts.db_tool import DatabaseTool
+from scripts.utils import Utils
 
 
 def startup_greeting():
