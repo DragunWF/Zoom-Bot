@@ -18,7 +18,7 @@ of that script.
 
 - To be able to join a zoom meeting, you first have to go to `config/settings.json` and inside
   the `"meetings"` property array, you have to set your zoom meetings there with its details such
-  as the `"days"` of when the day of the week it occurs and `"hour"` of the hour it starts. 
+  as the `"days"` of when the day of the week it occurs and `"hour"` of the hour it starts in **24-hour clock format**. 
   **Each string in the `days` array must be lowercase.**
 - You can ignore the `"chrome_profile"` property for now. I'm still planning a feature that uses it.
 - The `"is_exe"` just asks if you're going to run the bot from an `.exe` file or from the source code.
