@@ -25,9 +25,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception as error:
-        Utils.text_to_speech("An error has occured!")
-        print(error)
-        sleep(30)
+    main()
