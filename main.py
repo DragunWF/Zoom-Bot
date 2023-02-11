@@ -1,5 +1,5 @@
 from time import sleep
-from scripts.automation import AutomationExecutor
+from scripts.bot import Bot
 from scripts.time_getter import TimeGetter
 from scripts.db_tool import DatabaseTool
 from scripts.utils import Utils
@@ -20,8 +20,8 @@ def main():
     startup_greeting()
     db_tool = DatabaseTool()
     db_tool.insert_program_opened_record()
-    automation_bot = AutomationExecutor(db_tool)
-    automation_bot.start_automation()
+    bot = Bot(db_tool)
+    bot.start_automation()
 
 
 if __name__ == "__main__":

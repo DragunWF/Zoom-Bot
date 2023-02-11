@@ -8,9 +8,10 @@ from .time_getter import TimeGetter
 from .utils import Utils
 
 
-class AutomationExecutor:
+class Bot:
     def __init__(self, database_tool: object):
-        settings = json.loads(Path(f"{Utils.get_path()}/config/settings.json").read_text())[0]
+        settings = json.loads(
+            Path(f"{Utils.get_path()}/config/settings.json").read_text())[0]
         self.__meetings = settings["meetings"]
         self.__meetings_today = []
         self.__current_meeting = {}
@@ -39,7 +40,8 @@ class AutomationExecutor:
         current_hour = Utils.hour_to_int(TimeGetter.get_hour())
         end_hour = Utils.hour_to_int(self.__current_meeting["hour"]["end"])
         if current_hour > end_hour:
-            self.__meetings_today.pop(self.__meetings_today.index(self.__current_meeting))
+            self.__meetings_today.pop(
+                self.__meetings_today.index(self.__current_meeting))
             self.__current_meeting = {}
             self.__inside_meeting = False
             self.__iterations = 0
@@ -64,11 +66,13 @@ class AutomationExecutor:
                     break
 
         meeting_names = ", ".join([i["name"] for i in self.__meetings_today])
-        Utils.colored_print(f"Your meetings today are {meeting_names}", color="yellow")
+        Utils.colored_print(
+            f"Your meetings today are {meeting_names}", color="yellow")
 
     def __check_meetings_left_today(self):
         if not self.__meetings_today:
-            raise Exception("Call __check_day_for_meetings() first before this function!")
+            raise Exception(
+                "Call __check_day_for_meetings() first before this function!")
 
         meetings_left_today = []
         current_hour = Utils.hour_to_int(TimeGetter.get_hour())
@@ -109,7 +113,8 @@ class AutomationExecutor:
                 exit()
 
             if not self.__inside_meeting:
-                Utils.colored_print(f"No meeting ({self.__iterations})", color="yellow")
+                Utils.colored_print(
+                    f"No meeting ({self.__iterations})", color="yellow")
                 self.__check_hour_for_meeting()
             else:
                 Utils.colored_print(f"Meeting: {self.__current_meeting['name']} ({self.__iterations})",
