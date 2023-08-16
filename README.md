@@ -63,4 +63,4 @@ of that script.
 
 ## Contact
 
-If you have any questions you can contact me via discord. My discord tag is **DragonWF#9321**.
+If you have any questions you can contact me via discord. My discord tag is **dragunwf**.
